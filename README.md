@@ -18,5 +18,6 @@ Option 2, use my bot:
 2. Then check if the bot is online.
 3. Then try to use a command. Please report any bugs on github.
 
-![Banner](assets/header.png)
+<p align="center">
+  <img src="assets/header.png" alt="Banner" style="width:100%; max-width:800px;"/>
 ---
