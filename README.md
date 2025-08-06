@@ -20,5 +20,4 @@ Option 2, use my bot:
 
 Made with ❤️ by SuperNinjaCat5
 
-![Code](assets/code.png)
 ---
