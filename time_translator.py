@@ -73,7 +73,23 @@ async def americify(ctx, time: str):
     except Exception as e:
         await ctx.send("Invalid time format. Use HH:MM (24h).")
 
+@bot.command(name="fromnico", help="Convert 24h time to 12h US format")
+async def americify(ctx, time: str):
+    try:
+        result = make_time_us(time)
+        await ctx.send(result)
+    except Exception as e:
+        await ctx.send("Invalid time format. Use HH:MM (24h).")
+
 @bot.command(name="europeify", help="Convert 12h time to 24h format")
+async def europeify(ctx, *, time: str):
+    try:
+        result = make_time_eu(time)
+        await ctx.send(result)
+    except Exception as e:
+        await ctx.send("Invalid time format. Use HH:MM AM/PM.")
+
+@bot.command(name="tonico", help="Convert 12h time to 24h format")
 async def europeify(ctx, *, time: str):
     try:
         result = make_time_eu(time)
