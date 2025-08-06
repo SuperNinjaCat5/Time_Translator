@@ -43,11 +43,9 @@ def make_time_eu(time):
     print(f"Time: {hour:02d}:{minute:02d}")
     return f"{hour:02d}:{minute:02d}"
 
-async def setup_commands():
-    @bot.tree.command(name="ping", description="Check if the bot is alive")
-    async def ping(interaction: discord.Interaction):
-        await interaction.response.send_message("Pong!")
-    
+@bot.tree.command(name="ping", description="Check if the bot is alive")
+async def ping(interaction: discord.Interaction):
+    await interaction.response.send_message("Pong!")
 
 @bot.tree.command(name="americify", description="Convert 24h time to 12h US format")
 @app_commands.describe(time="Time in 24h format (e.g., 14:30)")
@@ -63,10 +61,10 @@ async def europeify(interaction: discord.Interaction, time: str):
 
 @bot.event
 async def on_ready():
-    await setup_commands()
-    synced = await bot.tree.sync(guild=server)
+    synced = await bot.tree.sync()
     print(f"Synced {len(synced)} commands to guild {SERVER_ID}")
     print(f"Logged in as {bot.user}")
+    print("Registered commands:", [cmd.name for cmd in bot.tree.get_commands()])
 
 
 bot.run(os.getenv("BOT_TOKEN"))
