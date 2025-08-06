@@ -20,4 +20,5 @@ Option 2, use my bot:
 
 <p align="center">
   <img src="assets/header.png" alt="Banner" style="width:100%; max-width:800px;"/>
+</p>
 ---
